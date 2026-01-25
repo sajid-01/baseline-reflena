@@ -96,11 +96,9 @@ class Agent:
     def quantum_oscillator_heat_capacity(self):
         return """
 def quantum_heat_capacity(omega, T, hbar, kB):
-    if T <= 0:
-        return 0.0
     x = hbar * omega / (kB * T)
     ex = math.exp(x)
-    return kB * (x*x * ex) / ((ex - 1)**2)
+    return kB * (x**2) * ex / ((ex - 1) ** 2)
 """
 
     def coordination_number(self):
